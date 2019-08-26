@@ -2,28 +2,30 @@
 
 {% block body %}
 
+<a class="btn btn-light mt-3 ml-3" href="{{ path('symfony') }}"><img class ="icon" src="https://image.flaticon.com/icons/png/512/0/340.png" alt=""></a>
+
 <div class="wrap">
-       <div class="show d-flex justify-content-center mt-5">
-            <div class="showCard card mb-3" style="max-width: 55%; border-radius: 15px;">
-                <div class="show row no-gutters mb-2">
-                    <div class="col-md-4">
-                        <img src="{{ video.thumbnails }}" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ video.title }}</h5>
-                            <p class="card-text">{{ video.content | nl2br }}</p>
-                            <p class="card-text"><small class="text-muted">{{ video.createdAt | date('d/m/Y') }} à {{ video.createdAt | date('H:i') }}</small></p>
-                        </div>
-                        <a class="btn btn-outline-primary float-right w-25 mr-3" href="{{ path('edit', {id: video.id}) }}" role="button">modifier</a>
-                    </div>
+    <div class="show d-flex justify-content-center mt-5">
+        <div class="showCard card mb-3" style="border-radius: 5px;">
+            <div class="show row no-gutters">
+                <div class="col-md-4">
+                    <img src="{{ video.thumbnails }}" class="card-img img-fluid" alt="...">
                 </div>
-                <div class="yt pb-4 pt-5 d-flex justify-content-center">
-                    <iframe width="860" height="515" src="https://www.youtube.com/embed/{{ video.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ video.title }}</h2>
+                        <p class="card-text">{{ video.content | nl2br }}</p>
+                        <p class="card-text"><small class="text-muted">{{ video.createdAt | date('d/m/Y') }} à {{ video.createdAt | date('H:i') }}</small></p>
+                    </div>
+                    <a class="btn btn-outline-primary float-right w-25 mr-3" href="{{ path('edit', {id: video.id}) }}" role="button">modifier</a>
                 </div>
             </div>
-       </div> 
+            <div class="yt pb-4 pt-4 d-flex rounded justify-content-center">
+                <iframe width="860" height="515" src="https://www.youtube.com/embed/{{ video.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div> 
 
-</p>
+</div>
 
 {% endblock %}

@@ -10,20 +10,23 @@
     </div>
 
     {% for veille in veilles %}
-        <div class="veilleCard card m-auto shadow" style="max-width: 40%;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{{ veille.thumbnails }}" class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ veille.title }}</h5>
-                        <p class="card-text"><small class="text-muted">{{ veille.createdAt | date('d/m/Y') }} à {{ veille.createdAt | date('H:i') }}</small></p>
-                        <a class="btn-outline-primary btn float-right mb-3" href="{{ path('veilleShow', {id: veille.id}) }}" role="button">voir</a>
+        <div class="row">
+            <div class="Card card m-auto shadow col-lg-5 col-sm-10 pl-0">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{ veille.thumbnails }}" class="card-img img-fluid" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ veille.title }}</h5>
+                            <p class="card-text">{{ veille.content | slice(0, 100) ~ '...' | nl2br }}</p>
+                            <p class="card-text"><small class="text-muted">{{ veille.createdAt | date('d/m/Y') }} à {{ veille.createdAt | date('H:i') }}</small></p>
+                            <a class="btn-outline-primary btn float-right mb-3" href="{{ path('veilleShow', {id: veille.id}) }}" role="button">voir</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
+        </div>
         <div class="mb-4"></div>
 
     {% endfor %}

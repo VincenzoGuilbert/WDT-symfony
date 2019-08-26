@@ -4,6 +4,7 @@ $grey: #DBDBDB;
 body{
     padding-top: 2.9%;
     background-color: $grey;
+    
 }
 
 .title{
@@ -12,51 +13,11 @@ body{
 }
 
 .head{
-    background-image: url('https://wallpaperaccess.com/full/796843.png');
+    background-image: url('/img/bg.jpg');
     height: 95vh;
     background-attachment: fixed;
     background-position-y: center;
 }
-
-.arrow{
-    position: absolute;
-    top: 78%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.arrow span{
-    display: block;
-    width: 30px;
-    height: 30px;
-    border-bottom: 5px solid rgb(64, 255, 6);
-    border-right: 5px solid rgb(48, 255, 6);
-    transform: rotate(45deg);
-    margin: -10px;
-    animation: animate 2s infinite;
-}
-.arrow span:nth-child(2){
-    animation-delay: -0.2s;
-}
-
-.arrow span:nth-child(3){
-    animation-delay: -0.4s;
-}
-
-@keyframes animate {
-    0%{
-        opacity: 0;
-        transform: rotate(45deg) translate(-20px,-20px);
-    }
-    50%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-        transform: rotate(45deg) translate(20px,20px);
-    }
-}
-
 
 .formVideo{
     background-color: #F0F0F0;
@@ -66,7 +27,7 @@ body{
 
 }
 
-.videoCard:hover{
+.Card:hover{
     transform: scale(1.01);
 }
 
@@ -74,30 +35,8 @@ body{
     background-color: whitesmoke;
 }
 
-.videoShow{
-    background-color: $grey;
-    height: 70vh;
-    margin: auto;
-    margin-top: 5%;
-}
-
-.season>a>img{
-    width: auto;
-    height: 120%;
-}
-
-.season-card img:hover{
-    transform: scale(1.01);
-}
-
-.show>div>img{
-    border-radius: 15px;
-}
-
 .yt{
     background-color: #343A40;
-    border-bottom-left-radius:15px;
-    border-bottom-right-radius:15px;
 }
 
 .headTitle{
@@ -113,29 +52,16 @@ body{
     }
 }
 
-
-@media screen and (max-width: 640px){
-
-.card{
-    width: 75vw;
+.icon{
+    width: 32px;
+    height: auto;
 }
 
-.head{
-    background-image: url('https://wallpaperaccess.com/full/796843.png');
-    height: 50vh;
-    background-attachment: fixed;
-    background-position-y: center;
+.card-img, .card-img-top{
+    width: 100%;
+    height: auto;
 }
 
-#1{
-    height: 20vh !important;
-    padding: 200px !important;
+.row{
+    max-width: 100%;
 }
-
-iframe{
-    max-width: 90%;
-}
-
-}
-
-
