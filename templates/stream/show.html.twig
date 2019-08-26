@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="wrap">
+       <div class="show d-flex justify-content-center mt-5">
+            <div class="showCard card mb-3" style="max-width: 55%; border-radius: 15px;">
+                <div class="show row no-gutters mb-2">
+                    <div class="col-md-4">
+                        <img src="{{ video.thumbnails }}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ video.title }}</h5>
+                            <p class="card-text">{{ video.content }}</p>
+                            <p class="card-text"><small class="text-muted">{{ video.createdAt | date('d/m/Y') }} à {{ video.createdAt | date('H:i') }}</small></p>
+                        </div>
+                        <a class="btn btn-outline-primary float-right w-25 mr-3" href="{{ path('edit', {id: video.id}) }}" role="button">modifier</a>
+                    </div>
+                </div>
+                <div class="yt pb-4 pt-5 d-flex justify-content-center">
+                    <iframe width="860" height="515" src="https://www.youtube.com/embed/{{ video.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+       </div> 
+
+</p>
+
+{% endblock %}

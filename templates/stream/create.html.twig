@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="formVideo col-lg-6 col-sm-11 rounded shadow p-4">
+        {% if editMode %}
+            <h1 class="mb-5">Editer</h1>
+        {% else %}
+            <h1 class="mb-5">Ajouter</h1>
+        {% endif %}
+
+        {{ form_start(formVideo)}}
+
+        {{ form_row(formVideo.title, {'attr': {'placeholder': "Titre de l'épisode"}}) }}
+        {{ form_row(formVideo.content, {'attr': {'placeholder': "Description de l'épisode"}}) }}
+        {{ form_row(formVideo.thumbnails, {'attr': {'placeholder': "Image"}}) }}
+        {{ form_row(formVideo.link, {'attr': {'placeholder': "Liens de la video"}}) }}
+
+        <button type="submit" class="btn btn-primary mt-3">
+            {% if editMode %}
+                Enregistrer
+            {% else %}
+                Ajouter
+            {% endif %}
+        </button>
+
+        {{ form_end(formVideo) }}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div class="register formVideo col-lg-6 col-sm-11 rounded shadow-4">
+        {{ form_start(form) }}
+        <h2 class="text-center">Inscription</h2>
+
+        {{ form_row(form.username, {'attr': {'placeholder': 'Nom d\'utilisateur'}}) }}
+        {{ form_row(form.email, {'attr': {'placeholder': 'Adresse email'}}) }}
+        {{ form_row(form.password, {'attr': {'placeholder': 'Mot de passe'}}) }}
+        {{ form_row(form.confirm_password, {'attr': {'placeholder': 'Confirmation'}}) }}
+
+        <button type="submit" class="btn btn-primary">Inscription</button>
+        {{ form_end(form)}}
+    </div>
+
+{% endblock %}
