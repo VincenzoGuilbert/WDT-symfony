@@ -18,11 +18,11 @@
                     </div>
                 </div>
                 {% if veilleLink is not null %}
-                    <div class="yt mt-4 pb-4 pt-5 d-flex justify-content-center">                                      
-                        <iframe width="860" height="515" src="https://www.youtube.com/embed/{{ veille.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                  
+                    <div class="yt pb-4 pt-5 d-flex justify-content-center">
+                        <iframe width="860" height="515" src="https://www.youtube.com/embed/{{ veille.link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 {% endif %}
-                <div><p class="card-text mt-4">{{ veille.content }}</p></div>
+                <div class="p-5"><p class="card-text mt-4">{{ veille.content | nl2br }}</p></div>
             </div>
        </div> 
 

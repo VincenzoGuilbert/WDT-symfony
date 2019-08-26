@@ -12,7 +12,7 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">{{ video.title }}</h5>
-                            <p class="card-text">{{ video.content }}</p>
+                            <p class="card-text">{{ video.content | nl2br }}</p>
                             <p class="card-text"><small class="text-muted">{{ video.createdAt | date('d/m/Y') }} à {{ video.createdAt | date('H:i') }}</small></p>
                         </div>
                         <a class="btn btn-outline-primary float-right w-25 mr-3" href="{{ path('edit', {id: video.id}) }}" role="button">modifier</a>
